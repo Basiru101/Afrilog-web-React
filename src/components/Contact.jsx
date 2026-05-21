@@ -8,7 +8,7 @@ export default function Contact() {
           <h3>Our Head Office</h3>
           <p>📍 Rue Joss, Douala, Cameroon</p>
           <p>📞 +237 650 241 933</p>
-          <p>✉️ cm-support@afriloghub.com</p>
+          <p>✉️ basiruissa92@gmail.com</p>
           <p>⏰ Mon - Sat: 8AM - 6PM</p>
         </div>
 
