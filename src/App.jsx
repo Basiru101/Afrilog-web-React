@@ -1,11 +1,16 @@
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import "./styles/global.css";
+import Services from "./components/Services";
+import WhyUs from "./components/WhyUs";
+import Contact from "./components/Contact";
+import BookingModal from "./components/BookingModal";
+import Footer from "./components/Footer";
 
 export default function App() {
   const [trackingId, setTrackingId] = useState("");
   const [result, setResult] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   const database = {
     "AFLG-CMR26": {
@@ -29,13 +34,26 @@ export default function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar onBookClick={() => setShowModal(true)} />
+
       <Hero
         trackingId={trackingId}
         setTrackingId={setTrackingId}
         handleTrack={handleTrack}
         result={result}
       />
+
+      <Services />
+      <WhyUs />
+      <Contact />
+
+      <BookingModal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+      />
+
+        <Footer />
+
     </>
   );
 }

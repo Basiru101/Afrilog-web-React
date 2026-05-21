@@ -418,3 +418,197 @@ footer {
         flex-direction: column;
     }
 }
+
+/* ================= MOBILE NAVBAR ================= */
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #111;
+}
+
+.mobile-btn {
+    display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+    }
+
+    .header-btn {
+        display: none;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 5%;
+        background: white;
+        width: 220px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        gap: 15px;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .mobile-btn {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+/* ================= ADVANCED NAVBAR ================= */
+
+/* Sticky Blur Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.85);
+}
+
+/* Active Navigation Link */
+.active-link {
+    color: #f5a623 !important;
+    font-weight: 700;
+}
+
+/* ================= HAMBURGER MENU ================= */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+/* Hamburger Lines */
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: #111111;
+    border-radius: 10px;
+
+    transition: all 0.3s ease;
+}
+
+/* Hamburger Animation */
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translateY(11px);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-11px);
+}
+
+/* Hide Mobile Button on Desktop */
+.mobile-btn {
+    display: none;
+}
+
+/* ================= MOBILE NAVBAR ================= */
+
+@media (max-width: 768px) {
+
+    /* Show Hamburger */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hide Desktop Button */
+    .header-btn {
+        display: none;
+    }
+
+    /* Dropdown Menu */
+    .nav-links {
+        position: absolute;
+
+        top: 80px;
+        right: 5%;
+
+        width: 240px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        padding: 25px;
+
+        border-radius: 14px;
+
+        background: rgba(17, 17, 17, 0.96);
+
+        backdrop-filter: blur(12px);
+
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+        /* Hidden by default */
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-20px);
+
+        transition: all 0.35s ease;
+    }
+
+    /* Show Dropdown */
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+    /* Mobile Links */
+    .nav-links a {
+        color: white;
+
+        text-decoration: none;
+
+        font-size: 16px;
+
+        padding-bottom: 10px;
+
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Hover Effect */
+    .nav-links a:hover {
+        color: #f5a623;
+    }
+
+    /* Mobile Delivery Button */
+    .mobile-btn {
+        display: block;
+
+        width: 100%;
+
+        margin-top: 10px;
+    }
+}
